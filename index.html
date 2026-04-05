@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <title>SAGA of SONA</title>
 
-<!-- Google Font -->
+<!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-<!-- Font Awesome -->
+<!-- Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
@@ -48,11 +48,6 @@ body {
   box-shadow: 0 0 15px #00ffcc;
 
   animation: fadeIn 1s ease;
-  transition: 0.3s;
-}
-
-.box:hover {
-  transform: scale(1.02);
 }
 
 @keyframes fadeIn {
@@ -72,6 +67,7 @@ h2 {
 .input-box input {
   width: 100%;
   padding: 12px 10px;
+  padding-left: 35px;
   border: none;
   border-radius: 5px;
   outline: none;
@@ -82,10 +78,6 @@ h2 {
   left: 10px;
   top: 12px;
   color: gray;
-}
-
-.input-box input {
-  padding-left: 35px;
 }
 
 .input-box label {
@@ -112,7 +104,6 @@ input:focus {
 button {
   width: 100%;
   padding: 12px;
-  margin-top: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -168,10 +159,11 @@ function sendMsg() {
     return;
   }
 
+  // ✅ Save username for next pages
+  localStorage.setItem("username", name);
+
   // WhatsApp message
-  let msg = `Name: ${name}%0ACollege: ${college}%0ABatch: ${batch}%0A%0A 
-  
-  Give me the access code`;
+  let msg = `Name: ${name}%0ACollege: ${college}%0ABatch: ${batch}%0A%0AGive me the access code`;
 
   let url = "https://wa.me/8801858561346?text=" + msg;
 
