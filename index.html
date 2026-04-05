@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SAGA of SONA</title>
+
+<style>
+body {
+  background: #0a0a0a;
+  color: white;
+  font-family: Arial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.box {
+  background: #111;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #00ffcc;
+  width: 300px;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #00ffcc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>SAGA of SONA</h2>
+
+  <input type="text" id="name" placeholder="Your Name">
+  <input type="text" id="college" placeholder="Your College">
+  <input type="text" id="batch" placeholder="SSC Batch">
+
+  <button onclick="sendMsg()">Get Access</button>
+</div>
+
+<script>
+function sendMsg() {
+  let url = "https://wa.me/8801858561346?text=Give%20me%20the%20access%20code";
+
+  window.open(url, "_blank");
+
+  // auto redirect to code page after 2 sec
+  setTimeout(() => {
+    window.location.href = "code.html";
+  }, 2000);
+}
+</script>
+
+</body>
+</html>
